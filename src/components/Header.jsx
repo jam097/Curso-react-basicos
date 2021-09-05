@@ -1,5 +1,6 @@
 import React from 'react';
 
+//function declaration
 function Header(){
     const edad = 18;
 
@@ -21,10 +22,11 @@ function Header(){
                 <h1>Desde el Header</h1>
                 <h2>{edad}</h2>            
             </div>
-            <div>{/*{mensaje} imprimiendo dirctamente la variable */}
-
+            <div>
+                <p>imprimiendo dirctamente la variable :</p> {mensaje} 
+                <br/>
                 {/*Utilizando un operador ternario */}
-                {colocarMensaje ? ('Eres mayor de edad') : ('Eres menor de edad')}
+                <p>Desde un operador ternario :</p> {colocarMensaje ? ('Eres mayor de edad') : ('Eres menor de edad')}
 
             </div>
         </div>
