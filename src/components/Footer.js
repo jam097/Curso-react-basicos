@@ -1,10 +1,11 @@
 import React from 'react';
 
+
 //function expression
-const Footer = () => { // el encerrar en llaves al componente indicanda que puede utilizarse código javascript
+const Footer = ({fecha}) => { // el encerrar en llaves al componente indicanda que puede utilizarse código javascript
         return(        // si lo omito puedo escribir mi componente comose indica mas abajo en comentario.
             <footer>
-                <p>Todos los derechos reservados &copy;</p>
+                <p><small><em>Todos los derechos reservados {fecha} &copy;</em></small></p>
             </footer>
         );
 };
