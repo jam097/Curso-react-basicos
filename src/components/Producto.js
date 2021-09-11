@@ -1,12 +1,21 @@
 import React from 'react'
 
-const Producto = ({producto}) => {
+const Producto = ({producto, /*productos,*/ carrito, agregarProducto}) => {
 
     //mejor de esta forma:
     const {nombre, precio, id} = producto
 
     const seleccionarProducto = (id) => {
-        console.log('Comprando...', id);
+
+        //const producto = productos.filter(producto => producto.id === id);
+        const productoSeleccionado = Object.values(producto); // [producto.id, producto.nombre, producto.precio];
+
+        agregarProducto([...carrito, productoSeleccionado]); //utilizamos el operador spread para mantener en el estado los artículos 
+                                                           //previamente seleccionados
+
+        //console.log('Comprando...', id);
+        //console.log(productoSeleccionado[1]);
+        //console.log(productoSeleccionado);
     }
 
     return ( <div>
