@@ -18,8 +18,6 @@ function App() {
   // state para un carrito de compras
   const [carrito, agregarProducto] = useState([]);
 
-  // state para el indice de productos en el carrito de compras
-  //const [indiceCarrito, aumentarIndice] = useState(0);
 
   // Vamos a obtener el año actual para el footer.
   const fecha = new Date().getFullYear();
