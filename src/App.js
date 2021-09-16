@@ -2,6 +2,7 @@ import React, {Fragment, useState} from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Producto from './components/Producto';
+import Carrito from './components/Carrito';
 
 
 function App() {
@@ -16,6 +17,9 @@ function App() {
 
   // state para un carrito de compras
   const [carrito, agregarProducto] = useState([]);
+
+  // state para el indice de productos en el carrito de compras
+  //const [indiceCarrito, aumentarIndice] = useState(0);
 
   // Vamos a obtener el año actual para el footer.
   const fecha = new Date().getFullYear();
@@ -41,6 +45,9 @@ function App() {
         {productos.map(producto =>(<Producto 
                                     key={producto.id} 
                                     producto={producto} 
+                                    productos={productos}
+                                    //indiceCarrito={indiceCarrito}
+                                    //aumentarIndice={aumentarIndice}
                                     /*  productos={productos} este fue un ejemplo del prof. para buscar nuevamente en el componente Producto  */  
                                     /*  mediante una función reactiva (filter) con el id el producto seleccionado y que la función lo devolviera*/
                                     /*  como array. Para esto es preferible utilizar const productoSeleccionado = Object.values(producto); y  */
@@ -49,6 +56,10 @@ function App() {
                                     carrito={carrito}
                                     agregarProducto={agregarProducto}
                                     />))}
+
+        <Carrito carrito={carrito}
+                 agregarProducto={agregarProducto}
+        />
 
         <Footer fecha={fecha}/>
     </Fragment>
